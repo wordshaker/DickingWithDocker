@@ -55,6 +55,19 @@ services:
     volumes:
     - ./eventsubscriber:/usr/src/eventsubscriber
     - /usr/src/eventsubscriber/node_modules
+  website:
+    container_name: website
+    image: website
+    build:
+      context: ./website
+    restart: always
+    links:
+      - rabbitmq:rabbitmq
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./website:/usr/src/website
+    - /usr/src/website/node_modules
   eventpublisher:
     container_name: eventpublisher
     image: eventpublisher
