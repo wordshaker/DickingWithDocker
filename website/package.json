@@ -7,7 +7,7 @@
   },
   "repository": {
   "type": "git",
-  "url": "git://github.com/wordshaker/wit_web.git"
+  "url": "git://github.com/supercide/dickingwithdocker.git"
   },
   "license": "ISC",
   "dependencies": {
