@@ -1,0 +1,24 @@
+h1 {
+  color: yellow;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+body {
+  background-color: white;
+}
+
+/* Desktop */
+  .navbar-default{
+    background-color: #4da6ff !important;
+  }
+  
+/* iPad */
+@media(max-width: 1024px){
+
+}
+
+/* iPhone 6*/
+@media (max-width: 667px) { 
+
+}
+
