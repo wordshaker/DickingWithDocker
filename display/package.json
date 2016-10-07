@@ -1,0 +1,14 @@
+{
+  "name": "display",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "John Bradshaw <John.Bradshaw@oakbrookfinance.com>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "ws": "^1.1.1"
+  }
+}

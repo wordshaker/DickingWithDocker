@@ -1,0 +1,71 @@
+version: '2'
+services:
+  mongo:
+    container_name: mongodb
+    image: mongo:3.2.9
+    restart: always
+    ports:
+    - "3001:27017"
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.6.5-management
+    restart: always
+    ports:
+    - "3002:5672"
+    - "3003:15672"
+    #The MQ default user:password is guest:guest
+  api:
+    container_name: api
+    image: api
+    build:
+      context: ./api
+    restart: always
+    ports:
+    - "3004:80"
+    volumes:
+    - ./api:/usr/src/app
+    - /usr/src/app/node_modules
+    links:
+      - mongo:mongo
+      - display:display
+  display:
+    container_name: display
+    image: display
+    build:
+      context: ./display
+    restart: always
+    ports:
+    - "3005:3005"
+    - "3006:3006"
+    volumes:
+    - ./display:/usr/src/display
+    - /usr/src/display/node_modules
+  eventsubscriber:
+    container_name: eventsubscriber
+    image: eventsubscriber
+    build:
+      context: ./eventsubscriber
+    restart: always
+    links:
+      - rabbitmq:rabbitmq
+      - api:api
+    ports:
+    - "3007:3007"
+    volumes:
+    volumes:
+    - ./eventsubscriber:/usr/src/eventsubscriber
+    - /usr/src/eventsubscriber/node_modules
+  eventpublisher:
+    container_name: eventpublisher
+    image: eventpublisher
+    build:
+      context: ./eventpublisher
+    restart: always
+    links:
+      - rabbitmq:rabbitmq
+    ports:
+    - "3008:3008"
+    volumes:
+    volumes:
+    - ./eventpublisher:/usr/src/eventpublisher
+    - /usr/src/eventpublisher/node_modules

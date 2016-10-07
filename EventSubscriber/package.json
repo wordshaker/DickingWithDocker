@@ -1,0 +1,14 @@
+{
+  "name": "eventsubscriber",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Matt Bettinson <matthew.bettinson@oakbrookfinance.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "amqplib":"^0.4.2",
+    "request":"^2.75.0"
+  }
+}
