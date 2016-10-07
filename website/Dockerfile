@@ -12,5 +12,5 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app/dickingwithdocker
 
-EXPOSE 8081
+EXPOSE 3000 3001
 CMD ["npm", "start"]
