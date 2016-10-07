@@ -265,6 +265,7 @@
           }
           currentY = tmp;
           tmp = divStyleMargin + '0;text-align:right;font-size:150%">';
+          PostScore(score, level);
           win['tis-status'].innerHTML = 'Score' + tmp + score + divEnd + 'Lines' + tmp + lines + divEnd + 'Level' + tmp + level + divEnd;
         }
 
