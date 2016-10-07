@@ -7,10 +7,11 @@
   },
   "repository": {
   "type": "git",
-  "url": "git://github.com/wordshaker/wit_web.git"
+  "url": "git://github.com/supercide/dickingwithdocker.git"
   },
   "license": "ISC",
   "dependencies": {
+    "amqplib":"^0.4.2",
     "@angular/common": "2.0.0",
     "@angular/compiler": "2.0.0",
     "@angular/core": "2.0.0",
