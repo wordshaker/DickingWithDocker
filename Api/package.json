@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Matt Bettinson <matthew.bettinson@oakbrookfinance.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "ws": "^1.1.1",
+    "mongodb": "^2.2",
+    "body-parser": "^1.15.2"
+  }
+}

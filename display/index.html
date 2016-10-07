@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet"  href="/a.css"/>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li {     
+        padding-left: 60px;
+        height:30px;
+        font-size: 30px;
+        position: relative;
+      }
+      #messages li img {     
+        position: absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        height:30px;
+        max-width:30px;
+      }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <script src="https://cdn.socket.io/socket.io-1.4.8.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function(){var a="";window.WebSocket=window.WebSocket||window.MozWebSocket;var b=new WebSocket("ws://127.0.0.1:3006");b.onopen=function(){},b.onerror=function(a){},b.onmessage=function(b){try{var c=JSON.parse(b.data),d=$("<span>").text(c.message);c.colour&&d.css({color:c.colour});var e=$('<li  class="animated">');if(c.icon&&c.icon!=a){a=c.icon;var f=$("<img>").attr("src",c.icon);e.append(f)}c.ken&&(e.addClass("infinite"),e.addClass(c.ken)),e.append(d),$("#messages").append(e),$("body").scrollTop($("body")[0].scrollHeight);}catch(a){return void console.log("This doesn't look like a valid JSON: ",b.data)}}});
+    </script>
+  </body>
+</html>
