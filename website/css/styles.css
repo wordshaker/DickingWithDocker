@@ -11,6 +11,16 @@ body {
   .navbar-default{
     background-color: #4da6ff !important;
   }
+
+
+  .troll{
+    padding-top: 30px;
+  }
+  
+  .konami{
+   padding-top: 40px; 
+   height: 80px;
+  }
   
 /* iPad */
 @media(max-width: 1024px){
