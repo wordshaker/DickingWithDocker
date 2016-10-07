@@ -9,9 +9,9 @@
       </nav>
       <section style="text-align:center; margin-top:10%;">
           <h1>Type</h1>
-          <img src="./images/konami.png" style="padding-top: 40px; height: 80px;">
+          <img src="./images/konami.png" class="konami">
           <br>
-          <img src="./images/troll.png" style="padding-top: 30px">
+          <img src="./images/troll.png" class="troll">
       </section>
        `
     })
