@@ -1,6 +1,6 @@
 # DickingWithDocker
 
-![alt text](http://tinypic.com/r/14obqep/9)
+![alt text](http://i65.tinypic.com/14obqep.jpg)
 
 Oakbrook Hackday
 
